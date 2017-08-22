@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+
+
+
+<body>
+    <h4> CREATE MAIL ACCOUNT </h4>
+    <form action="/create" method="post">
+        <div> <input type="email" name="mail" placeholder="Username" required>
+         </div>
+        <div>
+        <input type="password" name="pwd" placeholder="Pwd" required>
+        </div>
+        <div>
+        <input type="submit" name="submit" value="submit">
+        <input type="reset" name="reset">
+        </div>
+    </form>
+    <h4> LOGIN MAIL ACCOUNT </h4>
+    <form action="/login"  method="post">
+        <input type="email" name="mail" placeholder="Username" required>
+        <br>
+        <input type="password" name="pwd" placeholder="Pwd" required>
+        <br>
+        <input type="submit" name="submit">
+    </form>
+    <h4> CHANGE MAIL ACCOUNT </h4>
+    <form action="/update" onsubmit="userUpdateForm(); return false;" id="upform">
+        <input type="email" name="mail" placeholder="Username" required>
+        <br>
+        <input type="password" name="pwd" placeholder="Pwd" required>
+        <br>
+        <input type="submit" name="submit"""  "  value="submit">
+        <input type="reset" name="reset">
+    </form>
+
+    <script>
+    	function userUpdateForm() {
+        var upform = document.getElementById("upform");
+        var in1 = upform[0].value;
+        var in2 = upform[1].value;
+        console.log(in1)
+        console.log(in2)
+
+   $.ajax({url: "/update", type: "PUT", data: {mail: in1, pwd: in2}, success: function(result){
+   console.log(result);
+   	
+    }});
+        
+            // var httpRequest = new XMLHttpRequest();
+            // httpRequest.onreadystatechange = function(){
+            // 	if (httpRequest.readyState === 4) {
+            // 	console.log(httpRequest.response)
+            // 	}
+            // };
+
+            // httpRequest.open('PUT', '/update');
+            // httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            // var data = 'mail=' + encodeURIComponent(in1) + '&pwd=' + encodeURIComponent(in2);
+            // console.log(data)
+            // httpRequest.send(data)
+    	}
+
+    </script>
+</body>
+
+</html>
