@@ -12,24 +12,27 @@ const con = mySql.createConnection({
     database: 'logindb'
 });
 
+const path = require ('path');
 
 
 function errorHandler(error) {
     if (error) {
-        throw error;
+        console.error(error)
     }
 }
 
-path = require('path')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 
 
 app.get('/', function(req, res) {
-    res.sendFile('/home/prakash/20-08-2017/loginform.html');
+    res.sendFile(resolve.path('/loginform'));
     console.log('test')
 });
-
+// let  xldata = con.query('SELECT * FROM mailid', function (err,result) {
+//  errorHandler
+// //  });
+// console.log(xldata);
 con.connect(function(err, result) {
             errorHandler(err);
             console.log('connected')

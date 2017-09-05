@@ -1,43 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-	<title>Name Search</title>
-	 
+    <meta charset="utf-8">
+    <title>Name Search</title>
 </head>
+
 <body>
-
-
-
-<h4> Name Search</h4>
-
-
-
-<form name="s-form">
-<input type="text" name="i-search" oninput="getResults()">
-</form>
-<script>
-	var names =['prakash', 'udhaya', 'murali', 'muni', 'murugan', 'muthu', 'magesh', 'madhu'];
-	var inEl = document.forms['s-form']['i-search'];
-	var nm = document.createElement('P');
-	var bold = document.createElement('b');
+    <h4> Name Search</h4>
+    <form name="s-form">
+        <input type="text" name="i-search" oninput="getResults()">
+    </form>
+    <script>
+    var names = ['prakash', 'udhaya', 'murali', 'muni', 'murugan', 'muthu', 'magesh', 'madhu'];
+    var inEl = document.forms['s-form']['i-search'];
+    var nm = document.createElement('P');
+    var bold = document.createElement('b');
     nm.innerHTML = 'Hi';
-	document.body.append(nm)
+    document.body.append(nm)
     console.log(nm)
-	function getResults() {
-		var iText = inEl.value;
-		var fNames = names.filter(function (name) {
-			
-			if (name.includes(iText)) {
-				return true;
-			} else {
-				return false;
-			}
-		})
-		// console.log(fNames)
-		nm.innerHTML = fNames;
-	}
 
-</script>
+    function getResults() {
+        var iText = inEl.value;
+        var fNames = names.filter(function(name) {
 
+            if (name.includes(iText)) {
+                return true;
+            } else {
+                return false;
+            }
+        })
+        // console.log(fNames)
+        nm.innerHTML = fNames;
+    }
+    </script>
 </body>

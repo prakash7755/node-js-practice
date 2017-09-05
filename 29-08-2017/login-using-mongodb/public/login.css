@@ -1,0 +1,64 @@
+* {
+	box-sizing: border-box;
+}
+
+
+
+
+
+.loginBox {
+	width: 350px;
+	height: 450px;
+	margin: 10% auto;
+	background-color: whitesmoke;
+	background: #757F9A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #D7DDE8, #757F9A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #D7DDE8, #757F9A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	padding: 5% 3%;
+	box-shadow: 1px 2px 3px #AAA;
+	/*position: relative;*/
+}
+.user-avthar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: 39px;
+	left: 50%;
+	transform: translate(-50%);
+	box-shadow: 1px 1px 1px gray;
+}
+
+h2 {
+	margin: 0;
+	padding: 0 0 20px;
+	color: black;
+	text-align: center;
+	margin-top: 15%;
+}
+
+.input {
+	padding: 5% 0;
+	text-align: center;
+}
+
+.input [type="email"],
+.input [type="password"] {
+	width: 100%;
+}
+
+.form-btns {
+	display: inline-block;
+	width: 49%;
+	/*border-radius: 15px;*/
+}
+
+.form-btns[type="submit"]:hover {
+	background-color: lime;
+}
+
+.form-btns[type="reset"]:hover {
+	background-color: orange;
+}

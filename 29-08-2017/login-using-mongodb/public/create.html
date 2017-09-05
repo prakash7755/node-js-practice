@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>create account</title>
+    <link rel="stylesheet" type="text/css" href="./login.css">
+</head>
+
+<body>
+    <div class="loginBox">
+        <h2> Create New Account</h2>
+        <form name="regForm" action="/register" method="post"  onsubmit="checkPass(event)">
+            <img src="1.jpg" class="user-avthar">
+            <!-- Email -->
+            <div class="input">
+                <!-- <label>Mail Id</label> -->
+                <input type="email" name="mailid" placeholder="mailid@gmail.com" required>
+            </div>
+            <!-- Password -->
+            <div class="input">
+                <!-- <label>Password</label> -->
+                <input type="password" name="password" placeholder="........." required>
+            </div>
+            <!--Re-Password-->
+            <div class="input">
+                <!-- <label>Password</label> -->
+                <input type="password" name="rePassword" placeholder="........." required>
+            </div>
+            <!-- Submit Reset Ctrls -->
+            <div class="input">
+                <input class="form-btns" type="submit" value="Submit">
+                <input class="form-btns" type="reset" value="Reset">
+            </div>
+            <a href="./login.html"> Sign In</a>
+        </form>
+    </div>
+    <script>
+    var inPass = document.forms.regForm[1];
+    var rePass = document.forms.regForm[2];
+
+    function checkPass(event) {
+        var password = inPass.value;
+        var rePassword = rePass.value;
+        if (password !== rePassword) {
+            event.preventDefult();
+        } else {
+            alert('Hai register Your Account Done')
+        }
+    }
+    </script>
+</body>
+
+</html>

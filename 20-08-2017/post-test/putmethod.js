@@ -4,6 +4,9 @@ const con = require('./db');
 const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
+
+
+
 var bcrypt = require('bcrypt');
 const saltRounds = 10;
 
