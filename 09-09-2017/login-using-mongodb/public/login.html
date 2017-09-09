@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>create account</title>
+    <link rel="stylesheet" type="text/css" href="./login.css">
+</head>
+
+<body>
+<p id="demo"></p>
+    <div class="loginBox">
+        <h2> Login Account</h2>
+        <form id="resultCheck" onsubmit="formDoc(event)">
+            <img src="1.jpg" class="user-avthar">
+            <!-- Email -->
+            <div class="input">
+                <!-- <label>Mail Id</label> -->
+                <input type="email" name="mailid" placeholder="mailid@gmail.com" required>
+            </div>
+            <!-- Password -->
+            <div class="input">
+                <!-- <label>Password</label> -->
+                <input type="password" name="password" placeholder="........." required>
+            </div>
+            <!-- Submit Reset Ctrls -->
+            <div class="input">
+                <input class="form-btns" type="submit" value="Submit">
+                <input class="form-btns" type="reset" value="Reset">
+            </div>
+            <a href="./changepassword.html" id="chg"> Forgot Password </a>
+
+        </form>
+        <script>
+        'use strict'
+
+        function formDoc(event) {
+            event.preventDefault();
+            var login = document.getElementById("resultCheck");
+            var mailid = login[0].value;
+            var password = login[1].value;
+            $.ajax({
+                url: "/login",
+                type: "post",
+                data: { mailid, password },
+                success: function(result) {
+                    console.log(result);
+                    if (result === true) {
+                        location.href = "http://localhost:3000/changepassword.html";
+                    } else {
+                        return document.getElementById('demo').innerHTML = alert(result);
+                    }
+                }
+            });
+        }
+        </script>
+    </div>
+</body>
+
+</html>

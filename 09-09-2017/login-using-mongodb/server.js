@@ -103,6 +103,8 @@ function errorHandler(error) {
 }
 
 app.put('/change-password', function(req, res) {
+
+    
     let mailid = req.body.mailid;
     let inpassword = req.body.password;
     encPass(inpassword, function(error, password) {
